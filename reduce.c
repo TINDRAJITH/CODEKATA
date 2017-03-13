@@ -2,10 +2,10 @@
 int least(int a, int n) {
 int c,d;
   if (n <= 0) {
-    return num;  // Success
+    return a;  
   }
   if (a == 0) {
-    return 10;  // Fail
+    return 0;  
   }
    c = least(a/10, n);
    c=c*10 + a%10;
