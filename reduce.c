@@ -1,5 +1,5 @@
 #include <stdio.h>
-int reduce(int a, int n) {
+int least(int a, int n) {
 int c,d;
   if (n <= 0) {
     return num;  // Success
@@ -7,8 +7,9 @@ int c,d;
   if (a == 0) {
     return 10;  // Fail
   }
-   c = reduce(a/10, n)*10 + a%10;
-   d = reduce(a/10, n-1);
+   c = least(a/10, n);
+   c=c*10 + a%10;
+   d = least(a/10, n-1);
   if(c < d)
     return c ;
     else
@@ -20,6 +21,6 @@ int main(void)
 	int a,n;
 	scanf("%d",&a);
 	scanf("%d",&n);
-  printf("%d\n", reduce(a, n));
+  printf("%d\n", least(a, n));
  return 0;
 }
